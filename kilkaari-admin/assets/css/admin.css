@@ -183,6 +183,11 @@ select.status-select{
   background:var(--color-danger); color:#fff;
   padding:.6rem 1rem; font-size:.85rem; font-weight:600;
 }
+/* Without this, the rule above (equal specificity, author stylesheet)
+   overrides the browser's built-in `[hidden]{ display:none }` behavior, so
+   setting banner.hidden = true in JS silently does nothing and the banner
+   stays stuck on screen forever, regardless of whether the backend is
+   actually reachable. */
 .connection-banner[hidden]{ display:none; }
 .connection-banner button{
   background:rgba(255,255,255,.18); color:#fff; border:1px solid rgba(255,255,255,.4);
