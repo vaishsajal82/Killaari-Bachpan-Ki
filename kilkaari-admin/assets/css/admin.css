@@ -183,6 +183,7 @@ select.status-select{
   background:var(--color-danger); color:#fff;
   padding:.6rem 1rem; font-size:.85rem; font-weight:600;
 }
+.connection-banner[hidden]{ display:none; }
 .connection-banner button{
   background:rgba(255,255,255,.18); color:#fff; border:1px solid rgba(255,255,255,.4);
   border-radius:6px; padding:.25rem .7rem; font-size:.78rem; font-weight:600; cursor:pointer;
