@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volunteer With Us | Kilkaari – Bachpan Ki</title>
+<meta name="description" content="Volunteer with Kilkaari – Bachpan Ki: teach, support health camps, or help with community outreach.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/global.css">
+<link rel="stylesheet" href="assets/css/navbar.css">
+<link rel="stylesheet" href="assets/css/hero.css">
+<link rel="stylesheet" href="assets/css/cards.css">
+<link rel="stylesheet" href="assets/css/buttons.css">
+<link rel="stylesheet" href="assets/css/forms.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a href="index.html" class="navbar__brand"><img src="assets/images/logo.png" alt="Kilkaari – Bachpan Ki" class="navbar__brand-logo"></a>
+    <nav class="navbar__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="navbar__actions">
+      <a href="donate.html" class="btn btn-primary btn-sm">Donate</a>
+      <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="hero" style="padding-bottom:48px;">
+  <div class="container">
+    <p class="hero__eyebrow">Volunteer With Us</p>
+    <h1 class="hero__title" style="max-width:16ch;">Your time is one of the most valuable things you can give.</h1>
+    <p class="hero__lede">From weekend teaching to skilled pro-bono support, there's a role suited to your schedule.</p>
+  </div>
+</section>
+
+<section class="volunteer-section">
+  <div class="container">
+    <div class="volunteer__benefits">
+      <div class="benefit-card card reveal">
+        <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h4>Teach & Mentor</h4>
+        <p>Run weekend classes or mentor a small group of children through our learning centres.</p>
+      </div>
+      <div class="benefit-card card reveal">
+        <div class="icon"><i class="fa-solid fa-briefcase-medical"></i></div>
+        <h4>Support Health Camps</h4>
+        <p>Assist medical volunteers during our mobile camps and immunisation drives.</p>
+      </div>
+      <div class="benefit-card card reveal">
+        <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+        <h4>Community Outreach</h4>
+        <p>Help coordinate events, drives and household visits in your local area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <p class="eyebrow" style="justify-content:center;">How It Works</p>
+      <h2>Three simple steps</h2>
+    </div>
+    <div class="programs-grid">
+      <article class="program-card card reveal"><div class="program-card__body"><span class="num">01</span><h3>Apply</h3><p>Fill out the form below — takes about two minutes.</p></div></article>
+      <article class="program-card card reveal"><div class="program-card__body"><span class="num">02</span><h3>Orientation</h3><p>Join a short orientation session and get paired with an experienced volunteer.</p></div></article>
+      <article class="program-card card reveal"><div class="program-card__body"><span class="num">03</span><h3>Get Started</h3><p>Begin at a center near you, on a schedule that works for you.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="container" style="max-width:720px;">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <p class="eyebrow" style="justify-content:center;">Apply Now</p>
+      <h2>Tell us about yourself</h2>
+    </div>
+
+    <form class="form-card reveal" data-demo-form data-endpoint="/api/volunteer-applications">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="v-name">Full Name</label>
+          <input class="form-control" type="text" id="v-name" name="full_name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="v-phone">Phone Number</label>
+          <input class="form-control" type="tel" id="v-phone" name="phone" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="v-email">Email Address</label>
+          <input class="form-control" type="email" id="v-email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="v-city">City</label>
+          <input class="form-control" type="text" id="v-city" name="city">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="v-interest">Area of Interest</label>
+          <select class="form-control" id="v-interest" name="area_of_interest">
+            <option value="Teach & Mentor">Teach &amp; Mentor</option>
+            <option value="Support Health Camps">Support Health Camps</option>
+            <option value="Community Outreach">Community Outreach</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="v-availability">Availability</label>
+          <select class="form-control" id="v-availability" name="availability">
+            <option value="Weekends">Weekends</option>
+            <option value="Weekday evenings">Weekday evenings</option>
+            <option value="Flexible">Flexible</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="v-message">Anything else we should know?</label>
+        <textarea class="form-control" id="v-message" name="message" placeholder="Relevant experience, preferred center, etc."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+      <p data-form-success hidden style="margin-top:1rem;color:var(--color-secondary);font-weight:600;">Thanks — your application has been received. We'll reach out within a few days.</p>
+      <p class="form-note">By applying you agree to be contacted by Kilkaari about volunteering opportunities.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__brand"><img src="assets/images/logo.png" alt="Kilkaari – Bachpan Ki" class="navbar__brand-logo"></a>
+        <p>किलकारी – बचपन की — a revolution for education, connecting disadvantaged children to mainstream schooling.</p>
+        <div class="footer__social"><a href="https://www.facebook.com/kilkaari.bachpanki" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul><li><a href="about.html">About Us</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Programs</h4>
+        <ul><li><a href="programs.html">Education</a></li><li><a href="programs.html">Healthcare</a></li><li><a href="programs.html">Nutrition</a></li><li><a href="programs.html">Women Empowerment</a></li></ul>
+      </div>
+      <div class="footer__col footer__newsletter">
+        <h4>Stay Updated</h4>
+        <p>Monthly stories from the field — no spam, unsubscribe any time.</p>
+        <form class="newsletter-form">
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletter-email" placeholder="Your email address" required>
+          <button type="submit">Join</button>
+        </form>
+        <ul class="footer__contact" style="margin-top:1.5rem;">
+          <li><i class="fa-solid fa-location-dot"></i><span>Abdul Kalam Center, Near Mange Ram Park, Delhi – 110085</span></li>
+          <li><i class="fa-solid fa-phone"></i><span><a href="tel:+919990693995">+91 99906 93995</a></span></li>
+          <li><i class="fa-solid fa-envelope"></i><span><a href="mailto:contact@kilkaari.org.in">contact@kilkaari.org.in</a></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span data-current-year>2026</span> Kilkaari – Bachpan Ki. All rights reserved.</span>
+      <div class="footer__legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/navbar.js"></script>
+<script src="assets/js/animation.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

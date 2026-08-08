@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 520 520">
+  <!-- Faint pastel "school doodle" tile: pencil, globe, notebook, backpack, "123".
+       Designed to be tiled (background-repeat) at full opacity — the faintness
+       comes from the low fill-opacity baked into each shape, not CSS opacity,
+       so it never washes out real page content sitting on top of it. -->
+
+  <!-- Pencil (top-left) -->
+  <g transform="translate(40,50) rotate(-25)">
+    <rect x="0" y="0" width="70" height="16" rx="3" fill="#F4B400" fill-opacity="0.28"/>
+    <polygon points="70,0 90,8 70,16" fill="#e0a72f" fill-opacity="0.28"/>
+    <rect x="0" y="0" width="14" height="16" rx="2" fill="#e57373" fill-opacity="0.22"/>
+  </g>
+
+  <!-- Globe (top area) -->
+  <g transform="translate(150,90)">
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#2E8B57" stroke-opacity="0.3" stroke-width="3"/>
+    <ellipse cx="0" cy="0" rx="10" ry="26" fill="none" stroke="#2E8B57" stroke-opacity="0.28" stroke-width="2.4"/>
+    <line x1="-26" y1="0" x2="26" y2="0" stroke="#2E8B57" stroke-opacity="0.28" stroke-width="2.4"/>
+    <line x1="-22" y1="-13" x2="22" y2="-13" stroke="#2E8B57" stroke-opacity="0.22" stroke-width="2"/>
+    <line x1="-22" y1="13" x2="22" y2="13" stroke="#2E8B57" stroke-opacity="0.22" stroke-width="2"/>
+  </g>
+
+  <!-- Backpack (top-right) -->
+  <g transform="translate(400,60)">
+    <rect x="-28" y="-6" width="56" height="66" rx="14" fill="#7C93E0" fill-opacity="0.24"/>
+    <rect x="-16" y="18" width="32" height="22" rx="6" fill="#5c74c9" fill-opacity="0.22"/>
+    <path d="M -14 -6 Q -14 -22 0 -22 Q 14 -22 14 -6" fill="none" stroke="#5c74c9" stroke-opacity="0.28" stroke-width="4"/>
+  </g>
+
+  <!-- "123" (middle) -->
+  <g transform="translate(140,220) rotate(-14)">
+    <text x="0" y="0" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="46" fill="#2E8B57" fill-opacity="0.22">1</text>
+    <text x="26" y="10" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="46" fill="#F4B400" fill-opacity="0.24">2</text>
+    <text x="55" y="18" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="46" fill="#e57373" fill-opacity="0.22">3</text>
+  </g>
+
+  <!-- Notebook (right side) -->
+  <g transform="translate(430,240)">
+    <rect x="-30" y="-24" width="60" height="48" rx="4" fill="#efe4c8" fill-opacity="0.30"/>
+    <line x1="0" y1="-24" x2="0" y2="24" stroke="#c9b98a" stroke-opacity="0.3" stroke-width="2"/>
+    <line x1="-20" y1="-10" x2="-6" y2="-10" stroke="#c9b98a" stroke-opacity="0.3" stroke-width="2"/>
+    <line x1="-20" y1="0" x2="-6" y2="0" stroke="#c9b98a" stroke-opacity="0.3" stroke-width="2"/>
+    <line x1="-20" y1="10" x2="-6" y2="10" stroke="#c9b98a" stroke-opacity="0.3" stroke-width="2"/>
+    <line x1="6" y1="-10" x2="20" y2="-10" stroke="#c9b98a" stroke-opacity="0.3" stroke-width="2"/>
+    <line x1="6" y1="0" x2="20" y2="0" stroke="#c9b98a" stroke-opacity="0.3" stroke-width="2"/>
+    <line x1="6" y1="10" x2="20" y2="10" stroke="#c9b98a" stroke-opacity="0.3" stroke-width="2"/>
+  </g>
+
+  <!-- Second pencil (bottom-left) -->
+  <g transform="translate(60,340) rotate(-25)">
+    <rect x="0" y="0" width="70" height="16" rx="3" fill="#F4B400" fill-opacity="0.24"/>
+    <polygon points="70,0 90,8 70,16" fill="#e0a72f" fill-opacity="0.24"/>
+    <rect x="0" y="0" width="14" height="16" rx="2" fill="#e57373" fill-opacity="0.2"/>
+  </g>
+
+  <!-- Second globe (bottom) -->
+  <g transform="translate(160,400)">
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#2E8B57" stroke-opacity="0.26" stroke-width="3"/>
+    <ellipse cx="0" cy="0" rx="9" ry="22" fill="none" stroke="#2E8B57" stroke-opacity="0.24" stroke-width="2.2"/>
+    <line x1="-22" y1="0" x2="22" y2="0" stroke="#2E8B57" stroke-opacity="0.24" stroke-width="2.2"/>
+  </g>
+
+  <!-- Second backpack (bottom-right) -->
+  <g transform="translate(420,360)">
+    <rect x="-24" y="-6" width="48" height="56" rx="12" fill="#7C93E0" fill-opacity="0.2"/>
+    <rect x="-13" y="16" width="26" height="18" rx="5" fill="#5c74c9" fill-opacity="0.18"/>
+  </g>
+
+  <!-- Second notebook (bottom) -->
+  <g transform="translate(300,460)">
+    <rect x="-26" y="-20" width="52" height="40" rx="4" fill="#efe4c8" fill-opacity="0.26"/>
+    <line x1="0" y1="-20" x2="0" y2="20" stroke="#c9b98a" stroke-opacity="0.26" stroke-width="2"/>
+  </g>
+
+  <!-- Third pencil (far right, rotated other way) -->
+  <g transform="translate(470,460) rotate(20)">
+    <rect x="0" y="0" width="55" height="13" rx="2.5" fill="#F4B400" fill-opacity="0.2"/>
+    <polygon points="55,0 70,6.5 55,13" fill="#e0a72f" fill-opacity="0.2"/>
+  </g>
+</svg>

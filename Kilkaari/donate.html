@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate | Kilkaari – Bachpan Ki</title>
+<meta name="description" content="Donate to Kilkaari – Bachpan Ki. ₹250/month sponsors one child's education.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/global.css">
+<link rel="stylesheet" href="assets/css/navbar.css">
+<link rel="stylesheet" href="assets/css/hero.css">
+<link rel="stylesheet" href="assets/css/cards.css">
+<link rel="stylesheet" href="assets/css/buttons.css">
+<link rel="stylesheet" href="assets/css/forms.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a href="index.html" class="navbar__brand"><img src="assets/images/logo.png" alt="Kilkaari – Bachpan Ki" class="navbar__brand-logo"></a>
+    <nav class="navbar__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="navbar__actions">
+      <a href="donate.html" class="btn btn-primary btn-sm">Donate</a>
+      <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="hero" style="padding-bottom:48px;">
+  <div class="container">
+    <p class="hero__eyebrow">Donate</p>
+    <h1 class="hero__title" style="max-width:16ch;">₹250 a month changes a child's story.</h1>
+    <p class="hero__lede">That's the average monthly cost of one child's education at Kilkaari — copybooks, pencils, lessons, and a volunteer who stays in touch with their family.</p>
+  </div>
+</section>
+
+<!-- ============================= WAYS TO GIVE ============================= -->
+<section id="ways-to-give">
+  <div class="container">
+    <div class="section-head reveal"><p class="eyebrow">Ways to Give</p><h2>Pick what fits you</h2></div>
+    <div class="programs-grid">
+      <article class="program-card card reveal">
+        <div class="program-card__body">
+          <span class="num"><i class="fa-solid fa-child"></i></span>
+          <h3>Child Responsibility</h3>
+          <p>₹250/month covers one child's full education — the most direct way to give.</p>
+        </div>
+      </article>
+      <article class="program-card card reveal">
+        <div class="program-card__body">
+          <span class="num"><i class="fa-solid fa-pencil"></i></span>
+          <h3>Logistics</h3>
+          <p>Donate stationery — copies, pencils, pens — the everyday essentials our centers always need.</p>
+        </div>
+      </article>
+      <article class="program-card card reveal">
+        <div class="program-card__body">
+          <span class="num"><i class="fa-solid fa-hand-holding-dollar"></i></span>
+          <h3>One-Time Donation</h3>
+          <p>Any amount helps — minimum ₹50 — goes straight to active programs.</p>
+        </div>
+      </article>
+      <article class="program-card card reveal">
+        <div class="program-card__body">
+          <span class="num"><i class="fa-solid fa-bullhorn"></i></span>
+          <h3>Spread the Word</h3>
+          <p>No money required — share our campaign with people who might want to help.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= DONATION FORM ============================= -->
+<section id="give">
+  <div class="container" style="max-width:640px;">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <p class="eyebrow" style="justify-content:center;">Make a Donation</p>
+      <h2>Every rupee is tracked</h2>
+    </div>
+
+    <form class="form-card reveal" id="donate-form">
+      <div class="form-group">
+        <label class="form-label">Donation Type</label>
+        <div class="radio-cards" id="donation-type-cards">
+          <label class="radio-card is-selected"><input type="radio" name="donation_type" value="monthly_child_sponsorship" checked>Monthly (₹250)</label>
+          <label class="radio-card"><input type="radio" name="donation_type" value="one_time">One-Time</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Amount (INR)</label>
+        <div class="radio-cards" id="amount-cards">
+          <label class="radio-card is-selected"><input type="radio" name="amount_preset" value="250" checked>₹250</label>
+          <label class="radio-card"><input type="radio" name="amount_preset" value="500">₹500</label>
+          <label class="radio-card"><input type="radio" name="amount_preset" value="1000">₹1000</label>
+          <label class="radio-card"><input type="radio" name="amount_preset" value="custom">Custom</label>
+        </div>
+        <input class="form-control" type="number" id="custom-amount" placeholder="Enter amount (min ₹50)" min="50" style="margin-top:.75rem;display:none;">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="d-name">Full Name</label>
+          <input class="form-control" type="text" id="d-name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="d-phone">Phone Number</label>
+          <input class="form-control" type="tel" id="d-phone">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="d-email">Email Address</label>
+        <input class="form-control" type="email" id="d-email" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" id="donate-submit">Proceed to Payment</button>
+      <p class="form-note" id="donate-status"></p>
+      <p class="form-note">Payments are processed via a secure payment gateway. Bank transfer is also available — <a href="tel:+919990693995">call +91 99906 93995</a>.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============================= FAQ ============================= -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <p class="eyebrow" style="justify-content:center;">Donation FAQ</p>
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">Is my donation tax-deductible? <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-item__a"><p>Yes, Kilkaari – Bachpan Ki is a registered non-profit and donations are eligible for tax benefits under applicable Indian tax law. A receipt is issued for every donation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">What's the minimum donation amount? <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-item__a"><p>₹50 for a one-time donation. Monthly child sponsorship is ₹250.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">How long does settlement take? <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-item__a"><p>Payments typically settle within 3 business days through our payment gateway.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">Can I visit a center in person? <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-item__a"><p>Yes — donors and sponsors are welcome to visit active centers and meet the children. Contact us to arrange a visit.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__brand"><img src="assets/images/logo.png" alt="Kilkaari – Bachpan Ki" class="navbar__brand-logo"></a>
+        <p>किलकारी – बचपन की — a revolution for education, connecting disadvantaged children to mainstream schooling.</p>
+        <div class="footer__social"><a href="https://www.facebook.com/kilkaari.bachpanki" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul><li><a href="about.html">About Us</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Programs</h4>
+        <ul><li><a href="programs.html">Education</a></li><li><a href="programs.html">Healthcare</a></li><li><a href="programs.html">Nutrition</a></li><li><a href="programs.html">Women Empowerment</a></li></ul>
+      </div>
+      <div class="footer__col footer__newsletter">
+        <h4>Stay Updated</h4>
+        <p>Monthly stories from the field — no spam, unsubscribe any time.</p>
+        <form class="newsletter-form">
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletter-email" placeholder="Your email address" required>
+          <button type="submit">Join</button>
+        </form>
+        <ul class="footer__contact" style="margin-top:1.5rem;">
+          <li><i class="fa-solid fa-location-dot"></i><span>Abdul Kalam Center, Near Mange Ram Park, Delhi – 110085</span></li>
+          <li><i class="fa-solid fa-phone"></i><span><a href="tel:+919990693995">+91 99906 93995</a></span></li>
+          <li><i class="fa-solid fa-envelope"></i><span><a href="mailto:contact@kilkaari.org.in">contact@kilkaari.org.in</a></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span data-current-year>2026</span> Kilkaari – Bachpan Ki. All rights reserved.</span>
+      <div class="footer__legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/navbar.js"></script>
+<script src="assets/js/faq.js"></script>
+<script src="assets/js/animation.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  // Radio-card selection styling
+  document.querySelectorAll('.radio-cards').forEach((group) => {
+    group.querySelectorAll('.radio-card').forEach((card) => {
+      card.addEventListener('click', () => {
+        group.querySelectorAll('.radio-card').forEach((c) => c.classList.remove('is-selected'));
+        card.classList.add('is-selected');
+      });
+    });
+  });
+
+  // Show/hide the custom amount field
+  const customAmountInput = document.getElementById('custom-amount');
+  document.querySelectorAll('input[name="amount_preset"]').forEach((radio) => {
+    radio.addEventListener('change', () => {
+      customAmountInput.style.display = radio.value === 'custom' && radio.checked ? 'block' : customAmountInput.style.display;
+      if (radio.checked && radio.value !== 'custom') customAmountInput.style.display = 'none';
+    });
+  });
+
+  // Donation submit — creates the donation, then (in test payment mode)
+  // confirms it immediately so the flow can be demoed end-to-end.
+  const donateForm = document.getElementById('donate-form');
+  const statusEl = document.getElementById('donate-status');
+  donateForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = document.getElementById('donate-submit');
+    const preset = document.querySelector('input[name="amount_preset"]:checked').value;
+    const amount = preset === 'custom' ? parseFloat(customAmountInput.value) : parseFloat(preset);
+    const donationType = document.querySelector('input[name="donation_type"]:checked').value;
+    const name = document.getElementById('d-name').value;
+    const email = document.getElementById('d-email').value;
+    const phone = document.getElementById('d-phone').value;
+
+    if (!amount || amount < 50) {
+      statusEl.textContent = 'Please enter an amount of at least ₹50.';
+      statusEl.style.color = '#c0392b';
+      return;
+    }
+    if (!window.KilkaariAPI) {
+      statusEl.textContent = 'api.js did not load — check the backend connection.';
+      statusEl.style.color = '#c0392b';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Processing...';
+    statusEl.style.color = 'var(--color-ink-soft)';
+    statusEl.textContent = '';
+
+    try {
+      const result = await window.KilkaariAPI.createDonation({
+        donor_name: name,
+        donor_email: email,
+        donor_phone: phone || null,
+        amount,
+        donation_type: donationType,
+      });
+
+      // In test mode the backend always succeeds — confirm it so the
+      // donation shows as successful in the admin dashboard immediately.
+      if (result.checkout && result.checkout.provider === 'test') {
+        await window.KilkaariAPI.confirmTestPayment(result.donation.id);
+      }
+
+      submitBtn.textContent = 'Thank You!';
+      statusEl.style.color = 'var(--color-secondary)';
+      statusEl.textContent = `Donation of ₹${amount} recorded successfully. A receipt will be emailed to ${email}.`;
+      donateForm.reset();
+    } catch (err) {
+      console.error('Donation failed:', err);
+      submitBtn.textContent = 'Proceed to Payment';
+      statusEl.style.color = '#c0392b';
+      statusEl.textContent = `Something went wrong: ${err.message}`;
+    } finally {
+      submitBtn.disabled = false;
+      if (submitBtn.textContent === 'Thank You!') {
+        setTimeout(() => (submitBtn.textContent = 'Proceed to Payment'), 4000);
+      }
+    }
+  });
+</script>
+</body>
+</html>

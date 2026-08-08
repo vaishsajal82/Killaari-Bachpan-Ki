@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Kilkaari – Bachpan Ki</title>
+<meta name="description" content="Get in touch with Kilkaari – Bachpan Ki — phone, email, office details and a contact form.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/global.css">
+<link rel="stylesheet" href="assets/css/navbar.css">
+<link rel="stylesheet" href="assets/css/hero.css">
+<link rel="stylesheet" href="assets/css/cards.css">
+<link rel="stylesheet" href="assets/css/buttons.css">
+<link rel="stylesheet" href="assets/css/forms.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<style>
+  .map-placeholder{
+    height:320px; border-radius:var(--radius); overflow:hidden;
+    background:
+      linear-gradient(rgba(255,255,255,.55), rgba(255,255,255,.55)),
+      repeating-linear-gradient(0deg, #cfd8cf 0 1px, transparent 1px 40px),
+      repeating-linear-gradient(90deg, #cfd8cf 0 1px, transparent 1px 40px),
+      #e6ebe6;
+    display:flex; align-items:center; justify-content:center; flex-direction:column; gap:.5rem;
+    color:var(--color-ink-soft); font-family:var(--font-display); font-weight:600;
+  }
+  .map-placeholder i{ font-size:1.8rem; color:var(--color-primary); }
+</style>
+</head>
+<body>
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a href="index.html" class="navbar__brand"><img src="assets/images/logo.png" alt="Kilkaari – Bachpan Ki" class="navbar__brand-logo"></a>
+    <nav class="navbar__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="navbar__actions">
+      <a href="donate.html" class="btn btn-primary btn-sm">Donate</a>
+      <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="hero" style="padding-bottom:32px;">
+  <div class="container">
+    <p class="hero__eyebrow">Contact Us</p>
+    <h1 class="hero__title" style="max-width:16ch;">We'd love to hear from you.</h1>
+    <p class="hero__lede">Questions about volunteering, donations, or visiting a center — reach out any way that's convenient.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container about__grid">
+    <div class="reveal">
+      <div class="map-placeholder">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Abdul Kalam Center — Near Mange Ram Park, Delhi 110085</span>
+        <span style="font-weight:400;font-size:.8rem;">(Embed a real Google Map here with your API key)</span>
+      </div>
+
+      <div class="value-chip" style="margin-top:1.5rem;">
+        <div class="icon"><i class="fa-solid fa-phone"></i></div>
+        <h4>Phone</h4>
+        <p><a href="tel:+919990693995">+91 99906 93995</a></p>
+      </div>
+      <div class="value-chip" style="margin-top:1rem;">
+        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+        <h4>Email</h4>
+        <p><a href="mailto:contact@kilkaari.org.in">contact@kilkaari.org.in</a></p>
+      </div>
+      <div class="value-chip" style="margin-top:1rem;">
+        <div class="icon"><i class="fa-brands fa-facebook-f"></i></div>
+        <h4>Facebook</h4>
+        <p><a href="https://www.facebook.com/kilkaari.bachpanki" target="_blank" rel="noopener">facebook.com/kilkaari.bachpanki</a></p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <form class="form-card" data-demo-form data-endpoint="/api/contact-messages">
+        <div class="form-group">
+          <label class="form-label" for="c-name">Full Name</label>
+          <input class="form-control" type="text" id="c-name" name="full_name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="c-email">Email Address</label>
+          <input class="form-control" type="email" id="c-email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="c-phone">Phone Number</label>
+          <input class="form-control" type="tel" id="c-phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="c-comment">Message</label>
+          <textarea class="form-control" id="c-comment" name="comment" required placeholder="How can we help?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        <p data-form-success hidden style="margin-top:1rem;color:var(--color-secondary);font-weight:600;">Thanks — we've received your message and will reply soon.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CENTERS ============================= -->
+<section>
+  <div class="container">
+    <div class="section-head reveal"><p class="eyebrow">Our Centers</p><h2>Visit us in person</h2></div>
+    <div class="programs-grid">
+      <article class="program-card card reveal"><div class="program-card__body"><h3>Abdul Kalam Center</h3><p>Near Mange Ram Park, Delhi – 110085</p></div></article>
+      <article class="program-card card reveal"><div class="program-card__body"><h3>Sukhdev Center</h3><p>Surya Vihar, near Kapasheda border, Haryana – 122006</p></div></article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__brand"><img src="assets/images/logo.png" alt="Kilkaari – Bachpan Ki" class="navbar__brand-logo"></a>
+        <p>किलकारी – बचपन की — a revolution for education, connecting disadvantaged children to mainstream schooling.</p>
+        <div class="footer__social"><a href="https://www.facebook.com/kilkaari.bachpanki" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul><li><a href="about.html">About Us</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Programs</h4>
+        <ul><li><a href="programs.html">Education</a></li><li><a href="programs.html">Healthcare</a></li><li><a href="programs.html">Nutrition</a></li><li><a href="programs.html">Women Empowerment</a></li></ul>
+      </div>
+      <div class="footer__col footer__newsletter">
+        <h4>Stay Updated</h4>
+        <p>Monthly stories from the field — no spam, unsubscribe any time.</p>
+        <form class="newsletter-form">
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletter-email" placeholder="Your email address" required>
+          <button type="submit">Join</button>
+        </form>
+        <ul class="footer__contact" style="margin-top:1.5rem;">
+          <li><i class="fa-solid fa-location-dot"></i><span>Abdul Kalam Center, Near Mange Ram Park, Delhi – 110085</span></li>
+          <li><i class="fa-solid fa-phone"></i><span><a href="tel:+919990693995">+91 99906 93995</a></span></li>
+          <li><i class="fa-solid fa-envelope"></i><span><a href="mailto:contact@kilkaari.org.in">contact@kilkaari.org.in</a></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span data-current-year>2026</span> Kilkaari – Bachpan Ki. All rights reserved.</span>
+      <div class="footer__legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/navbar.js"></script>
+<script src="assets/js/animation.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

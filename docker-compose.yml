@@ -1,0 +1,69 @@
+# docker-compose.yml
+# Place this file at the root of kilkaari-project/, alongside Kilkaari/,
+# kilkaari-backend/, and kilkaari-admin/.
+#
+# Usage:
+#   docker compose up --build          # first time / after code changes
+#   docker compose up -d               # run in background afterwards
+#   docker compose down                # stop everything
+#   docker compose down -v             # stop AND wipe the database volume
+#
+# Services:
+#   db        -> PostgreSQL 16, data persisted in a named volume
+#   backend   -> FastAPI, http://localhost:8000  (docs at /docs)
+#   frontend  -> main site, http://localhost:5500
+#   admin     -> admin portal, http://localhost:5600
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-kilkaari_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ${POSTGRES_DB:-kilkaari}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"   # optional — lets you connect a local DB GUI (TablePlus, DBeaver, etc.)
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-kilkaari_user}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./kilkaari-backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - ./kilkaari-backend/.env
+    environment:
+      # Overrides whatever DATABASE_URL is in .env — inside the Docker
+      # network, containers reach each other by service name ("db"),
+      # not localhost.
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-kilkaari_user}:${POSTGRES_PASSWORD:-changeme}@db:5432/${POSTGRES_DB:-kilkaari}
+      CORS_ORIGINS: http://localhost:5500,http://localhost:5600
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./Kilkaari
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5500:80"
+
+  admin:
+    build: ./kilkaari-admin
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5600:80"
+
+volumes:
+  postgres_data:

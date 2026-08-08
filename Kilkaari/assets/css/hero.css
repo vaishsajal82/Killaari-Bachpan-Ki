@@ -1,0 +1,116 @@
+/* ==========================================================================
+   hero.css — full-bleed photo background hero
+   ========================================================================== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding: clamp(64px, 12vw, 140px) 0 clamp(48px, 8vw, 96px);
+}
+
+/* The photo itself, set inline via style="background-image:url(...)" on the
+   section so it's easy to swap — see index.html <section class="hero hero--photo"> */
+.hero--photo{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 640px;
+  display:flex;
+  align-items:center;
+}
+
+/* Dark gradient so white text stays readable over any photo, strongest on
+   the left where the text sits, fading out toward the right of the image. */
+.hero__overlay{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(100deg, rgba(20,20,20,.82) 0%, rgba(20,20,20,.62) 38%, rgba(20,20,20,.18) 68%, rgba(20,20,20,0) 88%);
+  z-index:1;
+}
+
+.hero__grid{
+  position:relative;
+  z-index:2;
+}
+
+.hero__content{
+  max-width: 640px;
+}
+
+.hero__eyebrow{
+  font-family: var(--font-display);
+  font-size:.8rem;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color: var(--color-accent);
+  margin-bottom:1.1rem;
+  display:flex; align-items:center; gap:.6rem;
+}
+.hero__eyebrow::before{ content:""; width:28px; height:2px; background:var(--color-accent); }
+
+.hero__title{
+  font-size: clamp(2.3rem, 4.6vw, 3.6rem);
+  font-weight:800;
+  color: #fff;
+  margin-bottom: 1.1rem;
+}
+.hero__title .accent{ color: #6ea8ff; }
+
+.hero__lede{
+  font-size: 1.12rem;
+  max-width: 46ch;
+  margin-bottom: 2rem;
+  color: rgba(255,255,255,.88);
+}
+
+/* Plain (non-photo) hero used on inner pages — the rules above are tuned
+   for white text over a dark photo overlay, which is unreadable on the
+   light patterned background these pages actually use. Override to dark
+   text plus a soft brand-tinted backdrop so the header still feels
+   deliberate rather than blank. */
+.hero:not(.hero--photo){
+  background: linear-gradient(180deg, var(--color-primary-tint) 0%, rgba(232,240,254,0) 100%);
+}
+.hero:not(.hero--photo) .hero__title{ color: var(--color-dark); }
+.hero:not(.hero--photo) .hero__title .accent{ color: var(--color-primary); }
+.hero:not(.hero--photo) .hero__lede{ color: var(--color-ink-soft); }
+
+.hero__actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 1rem;
+  margin-bottom: 2.6rem;
+}
+.hero__actions .btn-outline{
+  color:#fff;
+  border-color: rgba(255,255,255,.55);
+}
+.hero__actions .btn-outline:hover{
+  background: rgba(255,255,255,.12);
+}
+
+.hero__stats{
+  display:grid;
+  grid-template-columns: repeat(4, auto);
+  gap: clamp(20px, 3vw, 40px);
+  border-top: 1px solid rgba(255,255,255,.28);
+  padding-top: 1.6rem;
+}
+.hero__stat .num{
+  font-family: var(--font-display);
+  font-weight:800;
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  color: #fff;
+  display:block;
+}
+.hero__stat .label{
+  font-size:.78rem;
+  color: rgba(255,255,255,.75);
+  letter-spacing:.02em;
+}
+
+@media (max-width: 960px){
+  .hero__stats{ grid-template-columns: repeat(2, auto); row-gap: 1.6rem; }
+  .hero--photo{ min-height: 560px; }
+}

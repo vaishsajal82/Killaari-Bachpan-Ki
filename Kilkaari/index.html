@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kilkaari – Bachpan Ki | Every Child Deserves a Chance to Dream</title>
+<meta name="description" content="Kilkaari – Bachpan Ki is a non-profit working across education, healthcare awareness, nutrition, skill development and women empowerment for children in India.">
+
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Stylesheets (modular, loaded in cascade order) -->
+<link rel="stylesheet" href="assets/css/global.css">
+<link rel="stylesheet" href="assets/css/navbar.css">
+<link rel="stylesheet" href="assets/css/hero.css">
+<link rel="stylesheet" href="assets/css/carousel.css">
+<link rel="stylesheet" href="assets/css/cards.css">
+<link rel="stylesheet" href="assets/css/buttons.css">
+<link rel="stylesheet" href="assets/css/forms.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+
+<!-- ============================= NAVIGATION ============================= -->
+<header class="site-header">
+  <div class="container navbar">
+    <a href="index.html" class="navbar__brand">
+      <img src="assets/images/logo.png" alt="Kilkaari – Bachpan Ki" class="navbar__brand-logo">
+    </a>
+
+    <nav class="navbar__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="navbar__actions">
+      <a href="donate.html" class="btn btn-primary btn-sm">Donate</a>
+      <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+<!-- ============================= HERO ============================= -->
+<section class="hero hero--photo">
+  <!-- 5-image crossfade + swipe carousel behind the hero content. Replace the
+       placeholder hero-slide-2..5.jpg files in assets/images with real photos
+       — hero-slide-1.jpg is currently the same as the original hero-bg.jpg. -->
+  <div class="imgcarousel" data-interval="5000" aria-label="Hero photo carousel">
+    <div class="imgcarousel__slide is-active" style="background-image:url('assets/images/hero-slide-1.jpg');"></div>
+    <div class="imgcarousel__slide" style="background-image:url('assets/images/hero-slide-2.jpg');"></div>
+    <div class="imgcarousel__slide" style="background-image:url('assets/images/hero-slide-3.jpg');"></div>
+    <div class="imgcarousel__slide" style="background-image:url('assets/images/hero-slide-4.jpg');"></div>
+    <div class="imgcarousel__slide" style="background-image:url('assets/images/hero-slide-5.jpg');"></div>
+  </div>
+  <div class="hero__overlay"></div>
+  <div class="container hero__grid">
+    <div class="hero__content">
+      <p class="hero__eyebrow" data-hero-item>किलकारी – बचपन की</p>
+      <h1 class="hero__title" data-hero-item>A <span class="accent">Revolution for Education,</span> One Child at a Time.</h1>
+      <p class="hero__lede" data-hero-item>Kilkaari brings early education to children from economically disadvantaged communities and connects them to mainstream schooling — while building a community of people who believe education is the surest way to lift society up.</p>
+      <div class="hero__actions" data-hero-item>
+        <a href="donate.html" class="btn btn-primary">Donate Now</a>
+        <a href="volunteer.html" class="btn btn-outline">Join Us</a>
+      </div>
+      <!-- NOTE: the figures below are placeholders — the live site (kilkaari.org.in)
+           does not publish these numbers. Replace with verified totals before launch. -->
+      <div class="hero__stats" data-hero-item>
+        <div class="hero__stat"><span class="num">1000+</span><span class="label">Children Supported</span></div>
+        <div class="hero__stat"><span class="num">200+</span><span class="label">Volunteers</span></div>
+        <div class="hero__stat"><span class="num">5</span><span class="label">Learning Centers</span></div>
+        <div class="hero__stat"><span class="num">₹250</span><span class="label">Sponsors 1 Child / Month</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================= ABOUT ============================= -->
+<section class="about-section" id="about">
+  <div class="container about__grid">
+    <div class="about__media reveal">
+      <div class="photo-frame">
+    <!-- 5-image swipeable carousel. Replace the placeholder story-slide-2..5
+         files in assets/images with real photos — story-slide-1.jpeg is
+         currently the same as the original about-img.jpeg. -->
+    <div class="imgcarousel imgcarousel--on-light" data-interval="4000" aria-label="Our Story photo carousel">
+      <div class="imgcarousel__slide is-active" style="background-image:url('./assets/images/story-slide-1.jpeg');"></div>
+      <div class="imgcarousel__slide" style="background-image:url('./assets/images/story-slide-2.jpeg');"></div>
+      <div class="imgcarousel__slide" style="background-image:url('./assets/images/story-slide-3.jpeg');"></div>
+      <div class="imgcarousel__slide" style="background-image:url('./assets/images/story-slide-4.jpeg');"></div>
+      <div class="imgcarousel__slide" style="background-image:url('./assets/images/story-slide-5.jpeg');"></div>
+    </div>
+
+    <span class="photo-tag">Our Story</span>
+
+    <span class="photo-caption">
+        Community outreach at a Kilkaari center
+    </span>
+</div>
+    </div>
+    <div class="about__copy reveal">
+      <p class="eyebrow">About Kilkaari</p>
+      <h2>Connecting disadvantaged children back to mainstream education</h2>
+      <p>Kilkaari is an initiative to secure early education for children from economically disadvantaged and marginalized backgrounds, and to bring them into mainstream schooling. Alongside this, we bring together people who believe education is the most reliable way to lift society up. We supply the basics — copybooks, pencils, pens — and age-appropriate lessons, and we stay in touch with parents so their support for a child's schooling doesn't fade.</p>
+      <div class="about__values">
+        <div class="value-chip">
+          <div class="icon"><i class="fa-solid fa-compass"></i></div>
+          <h4>Why This Is Needed</h4>
+          <p>Children in this group are often left out of any form of education — school, home, or social — and society largely stays indifferent to it. Kilkaari fills that gap, free of charge.</p>
+        </div>
+        <div class="value-chip">
+          <div class="icon"><i class="fa-solid fa-eye"></i></div>
+          <h4>Age vs. Knowledge</h4>
+          <p>India's school system is age-based, not knowledge-based. We bring children up to the right level first, then help enrol them in the class they're actually ready for.</p>
+        </div>
+        <div class="value-chip">
+          <div class="icon"><i class="fa-solid fa-seedling"></i></div>
+          <h4>Our Values</h4>
+          <p>Mental and moral strength alongside academics — with sports, ethics and a sense of civic pride treated as seriously as the syllabus.</p>
+        </div>
+      </div>
+      <a href="about.html" class="btn btn-outline" style="margin-top:2rem;">Read Our Full Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= OUR STARS ============================= -->
+
+<!-- ============================= PROGRAMS ============================= -->
+<section class="programs-section" id="programs">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <p class="eyebrow" style="justify-content:center;">What We Do</p>
+      <h2>Four programs, one goal — a fair start for every child</h2>
+      <p>Each program is built with local partners and reviewed every quarter against real outcomes, not just activity.</p>
+    </div>
+
+    <div class="programs-grid" data-programs-grid>
+      <article class="program-card card reveal" data-program-title="Education">
+        <div class="photo-frame tone-blue" role="img" aria-label="Children studying in a classroom"></div>
+        <div class="program-card__body">
+          <span class="num">01</span>
+          <h3>Education</h3>
+          <p>Bridge-learning centres, school enrolment support and after-school tutoring for out-of-school children.</p>
+          <a href="programs.html" class="program-card__link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="program-card card reveal" data-program-title="Healthcare">
+        <div class="photo-frame tone-dark" role="img" aria-label="Mobile health camp for children"></div>
+        <div class="program-card__body">
+          <span class="num">02</span>
+          <h3>Healthcare</h3>
+          <p>Mobile medical camps, immunisation drives and health awareness sessions for families.</p>
+          <a href="programs.html" class="program-card__link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="program-card card reveal" data-program-title="Women Empowerment">
+        <div class="photo-frame tone-blue" role="img" aria-label="Women in a tailoring skill workshop"></div>
+        <div class="program-card__body">
+          <span class="num">03</span>
+          <h3>Women Empowerment</h3>
+          <p>Livelihood training and support groups that help mothers build stable household income.</p>
+          <a href="programs.html" class="program-card__link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="program-card card reveal" data-program-title="Skill Development">
+        <div class="photo-frame tone-gold" role="img" aria-label="Youth in a vocational skill session"></div>
+        <div class="program-card__body">
+          <span class="num">04</span>
+          <h3>Skill Development</h3>
+          <p>Vocational training for adolescents in trades with real, local hiring demand.</p>
+          <a href="programs.html" class="program-card__link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= IMPACT / COUNTERS ============================= -->
+<section class="impact-section" id="impact">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <p class="eyebrow" style="justify-content:center;color:var(--color-accent);">Our Impact</p>
+      <h2>Numbers behind the work</h2>
+      <p>Placeholder figures — replace with verified totals before launch (see the note near the hero stats).</p>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-stat reveal"><span class="num" data-count="1000" data-suffix="+">0</span><span class="label">Children Supported</span></div>
+      <div class="impact-stat reveal"><span class="num" data-count="200" data-suffix="+">0</span><span class="label">Volunteers</span></div>
+      <div class="impact-stat reveal"><span class="num" data-count="5">0</span><span class="label">Learning Centers</span></div>
+      <div class="impact-stat reveal"><span class="num" data-count="3">0</span><span class="label">States Reached</span></div>
+      <div class="impact-stat reveal"><span class="num" data-count="80" data-suffix="%">0</span><span class="label">Re-enrolled in School</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================= VOLUNTEER ============================= -->
+<section class="volunteer-section" id="volunteer">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <p class="eyebrow" style="justify-content:center;">Volunteer With Us</p>
+      <h2>Your time is one of the most valuable things you can give</h2>
+      <p>From weekend teaching to skilled pro-bono support, there's a role suited to your schedule.</p>
+    </div>
+
+    <div class="volunteer__benefits">
+      <div class="benefit-card card reveal">
+        <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h4>Teach & Mentor</h4>
+        <p>Run weekend classes or mentor a small group of children through our learning centres.</p>
+      </div>
+      <div class="benefit-card card reveal">
+        <div class="icon"><i class="fa-solid fa-briefcase-medical"></i></div>
+        <h4>Support Health Camps</h4>
+        <p>Assist medical volunteers during our mobile camps and immunisation drives.</p>
+      </div>
+      <div class="benefit-card card reveal">
+        <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+        <h4>Community Outreach</h4>
+        <p>Help coordinate events, drives and household visits in your local area.</p>
+      </div>
+    </div>
+
+    <div class="text-center reveal">
+      <a href="volunteer.html" class="btn btn-primary">Apply to Volunteer</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= GALLERY PREVIEW ============================= -->
+
+<!-- ============================= TESTIMONIALS =============================
+     NOTE: kilkaari.org.in has no published donor/volunteer quotes — these
+     three are illustrative placeholders. Swap in real quotes when available. -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <p class="eyebrow" style="justify-content:center;">Voices</p>
+      <h2>What our community says</h2>
+    </div>
+
+    <div style="max-width:720px;margin:0 auto;overflow:hidden;">
+      <div class="testimonial-track">
+        <div class="testimonial-card card">
+          <p>"Kilkaari didn't just enrol my daughter in school — they followed up every month to make sure she stayed. That kind of care is rare."</p>
+          <div class="who">
+            <div class="avatar">RS</div>
+            <div><strong>Radha Sharma</strong><span>Parent, Bareilly</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card card">
+          <p>"I've volunteered with several NGOs. Kilkaari is the only one that shows you exactly where your weekend hours went."</p>
+          <div class="who">
+            <div class="avatar">AK</div>
+            <div><strong>Aman Kapoor</strong><span>Volunteer, 3 years</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card card">
+          <p>"We give monthly because the quarterly reports are honest — good and bad news both. That transparency earned our trust."</p>
+          <div class="who">
+            <div class="avatar">NM</div>
+            <div><strong>Neha Mehta</strong><span>Monthly Donor</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FAQ ============================= -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <p class="eyebrow" style="justify-content:center;">Common Questions</p>
+      <h2>Frequently asked questions</h2>
+    </div>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">How is my donation used? <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-item__a"><p>At least 85% of every donation goes directly to program delivery. The remainder covers essential operations and financial reporting, both of which are audited annually.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">Can I volunteer without prior experience? <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-item__a"><p>Yes. Most roles need no prior experience — we run an orientation session and pair new volunteers with an experienced team member for their first few visits.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">Is my donation tax-deductible? <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-item__a"><p>Yes, Kilkaari – Bachpan Ki is a registered non-profit and donations are eligible for tax benefits under applicable Indian tax law. A receipt is issued for every donation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">Do you work outside Uttar Pradesh? <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-item__a"><p>Our core programs currently operate across 75 villages in Uttar Pradesh, with select partnerships extending support to neighbouring states.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CALL TO ACTION ============================= -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Ready to change a child's story?</h2>
+        <p>₹250 a month takes full responsibility for one child's education. Whether it's your time or a monthly gift, every contribution moves a real child closer to a fair start.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="volunteer.html" class="btn btn-outline-light">Become a Volunteer</a>
+        <a href="donate.html" class="btn btn-accent">Donate Today</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__brand">
+          <img src="assets/images/logo.png" alt="Kilkaari – Bachpan Ki" class="navbar__brand-logo">
+        </a>
+        <p>किलकारी – बचपन की — a revolution for education, connecting disadvantaged children to mainstream schooling.</p>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/kilkaari.bachpanki" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <!-- TODO: add Instagram / Twitter / LinkedIn once confirmed — not listed on the live site -->
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html">Education</a></li>
+          <li><a href="programs.html">Healthcare</a></li>
+          <li><a href="programs.html">Women Empowerment</a></li>
+          <li><a href="programs.html">Skill Development</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col footer__newsletter">
+        <h4>Stay Updated</h4>
+        <p>Monthly stories from the field — no spam, unsubscribe any time.</p>
+        <form class="newsletter-form">
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletter-email" placeholder="Your email address" required>
+          <button type="submit">Join</button>
+        </form>
+        <ul class="footer__contact" style="margin-top:1.5rem;">
+          <li><i class="fa-solid fa-location-dot"></i><span>Abdul Kalam Center, Near Mange Ram Park, Delhi – 110085</span></li>
+          <li><i class="fa-solid fa-phone"></i><span><a href="tel:+919990693995">+91 99906 93995</a></span></li>
+          <li><i class="fa-solid fa-envelope"></i><span><a href="mailto:contact@kilkaari.org.in">contact@kilkaari.org.in</a></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; <span data-current-year>2026</span> Kilkaari – Bachpan Ki. All rights reserved.</span>
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/navbar.js"></script>
+<script src="assets/js/carousel.js"></script>
+<script src="assets/js/hero.js"></script>
+<script src="assets/js/counter.js"></script>
+<script src="assets/js/faq.js"></script>
+<script src="assets/js/testimonials.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/home.js"></script>
+<script src="assets/js/animation.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
