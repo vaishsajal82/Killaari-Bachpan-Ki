@@ -33,6 +33,7 @@
           <div class="${frameClass}" style="${frameStyle}" role="img" aria-label="${caption}"></div>
         </div>`;
     }).join('');
+     grid.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
   }
 
   function wireUpInteractions() {
