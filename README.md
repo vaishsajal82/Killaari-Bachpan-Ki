@@ -51,17 +51,15 @@ API directly with `fetch()`.
 cd kilkaari-backend
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env        # fill in DATABASE_URL, JWT_SECRET_KEY,
-                             # FIRST_ADMIN_*, and (for image uploads)
-                             # CLOUDINARY_CLOUD_NAME/API_KEY/API_SECRET
+cp .env.example .env        
+                           
+                            
 alembic upgrade head
-python run.py                # → http://localhost:8000, docs at /docs
+python run.py
 
 # 2. Admin portal (separate terminal)
 cd kilkaari-admin
-python -m http.server 5500   # or any static file server
-# → http://localhost:5500 — set window.KILKAARI_API_BASE_URL if your
-#   backend isn't on the default Render URL admin.js points to
+python -m http.server 5500   
 
 # 3. Public site (separate terminal)
 cd Kilkaari
