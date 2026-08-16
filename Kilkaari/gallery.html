@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Kilkaari – Bachpan Ki</title>
+<meta name="description" content="Moments from the field — photos from Kilkaari's learning centers, health camps, and events.">
+
+<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gallery | Kilkaari – Bachpan Ki">
+<meta property="og:description" content="Moments from the field — photos from Kilkaari's learning centers, health camps, and events.">
+<!-- TODO: replace with your real deployed domain once you have one -->
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN.com/gallery.html">
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN.com/assets/images/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gallery | Kilkaari – Bachpan Ki">
+<meta name="twitter:description" content="Moments from the field — photos from Kilkaari's learning centers, health camps, and events.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/global.css">
+<link rel="stylesheet" href="assets/css/navbar.css">
+<link rel="stylesheet" href="assets/css/hero.css">
+<link rel="stylesheet" href="assets/css/cards.css">
+<link rel="stylesheet" href="assets/css/buttons.css">
+<link rel="stylesheet" href="assets/css/forms.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<style>
+  .gallery-modal{ position:fixed; inset:0; background:rgba(20,20,20,.85); display:none; align-items:center; justify-content:center; z-index:2000; padding:2rem; }
+  .gallery-modal.is-open{ display:flex; }
+  .gallery-modal__inner{ max-width:900px; width:100%; max-height:90vh; display:flex; flex-direction:column; align-items:center; }
+  .gallery-modal__inner .photo-frame{ width:100%; max-width:900px; max-height:80vh; min-height:200px; border-radius:var(--radius); }
+  .gallery-modal__inner img.gallery-modal__img{ max-width:100%; max-height:80vh; width:auto; height:auto; object-fit:contain; border-radius:var(--radius); display:block; }
+  .gallery-modal__close{ position:absolute; top:1.5rem; right:1.5rem; background:none; border:0; color:#fff; font-size:1.6rem; cursor:pointer; }
+  .gallery-modal__caption{ color:#fff; text-align:center; margin-top:1rem; font-family:var(--font-display); }
+</style>
+</head>
+<body>
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a href="index.html" class="navbar__brand"><img src="assets/images/logo.png" alt="Kilkaari – Bachpan Ki" class="navbar__brand-logo"></a>
+    <nav class="navbar__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="navbar__actions">
+      <a href="donate.html" class="btn btn-primary btn-sm">Donate</a>
+      <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="hero" style="padding-bottom:32px;">
+  <div class="container">
+    <p class="hero__eyebrow">Gallery</p>
+    <h1 class="hero__title" style="max-width:16ch;">Moments from the field.</h1>
+    <p class="hero__lede">A glimpse into daily life at our learning centers, health camps and community events.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="gallery-filters">
+      <button class="active" data-gallery-filter="all">All</button>
+      <button data-gallery-filter="education">Education</button>
+      <button data-gallery-filter="health">Health</button>
+      <button data-gallery-filter="events">Events</button>
+      <button data-gallery-filter="community">Community</button>
+    </div>
+
+    <div class="gallery-grid" data-gallery-grid>
+      <div class="gallery-item reveal" data-category="education" data-caption="A bridge-learning class in session">
+        <div class="photo-frame tone-blue" style="min-height:280px;"></div>
+      </div>
+      <div class="gallery-item reveal" data-category="health" data-caption="Mobile health camp check-up">
+        <div class="photo-frame tone-gold" style="min-height:190px;"></div>
+      </div>
+      <div class="gallery-item reveal" data-category="community" data-caption="Community outreach visit">
+        <div class="photo-frame tone-dark" style="min-height:230px;"></div>
+      </div>
+      <div class="gallery-item reveal" data-category="events" data-caption="Annual charity walkathon">
+        <div class="photo-frame" style="min-height:210px;"></div>
+      </div>
+      <div class="gallery-item reveal" data-category="education" data-caption="Reading practice with a volunteer">
+        <div class="photo-frame tone-gold" style="min-height:270px;"></div>
+      </div>
+      <div class="gallery-item reveal" data-category="community" data-caption="Parents' meeting at a center">
+        <div class="photo-frame tone-blue" style="min-height:200px;"></div>
+      </div>
+      <div class="gallery-item reveal" data-category="health" data-caption="Immunisation drive">
+        <div class="photo-frame tone-dark" style="min-height:250px;"></div>
+      </div>
+      <div class="gallery-item reveal" data-category="events" data-caption="Republic Day celebration">
+        <div class="photo-frame" style="min-height:220px;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div><h2>Have photos to share?</h2><p>If you've volunteered or visited a center, we'd love to feature your photos here.</p></div>
+      <div class="cta-banner__actions"><a href="contact.html" class="btn btn-accent">Send Us Photos</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__brand"><img src="assets/images/logo.png" alt="Kilkaari – Bachpan Ki" class="navbar__brand-logo"></a>
+        <p>किलकारी – बचपन की — a revolution for education, connecting disadvantaged children to mainstream schooling.</p>
+        <div class="footer__social"><a href="https://www.facebook.com/kilkaari.bachpanki" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul><li><a href="about.html">About Us</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Programs</h4>
+        <ul><li><a href="programs.html">Education</a></li><li><a href="programs.html">Healthcare</a></li><li><a href="programs.html">Nutrition</a></li><li><a href="programs.html">Women Empowerment</a></li></ul>
+      </div>
+      <div class="footer__col footer__newsletter">
+        <h4>Stay Updated</h4>
+        <p>Monthly stories from the field — no spam, unsubscribe any time.</p>
+        <form class="newsletter-form">
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletter-email" placeholder="Your email address" required>
+          <button type="submit">Join</button>
+        </form>
+        <ul class="footer__contact" style="margin-top:1.5rem;">
+          <li><i class="fa-solid fa-location-dot"></i><span>Abdul Kalam Center, Near Mange Ram Park, Delhi – 110085</span></li>
+          <li><i class="fa-solid fa-phone"></i><span><a href="tel:+919990693995">+91 99906 93995</a></span></li>
+          <li><i class="fa-solid fa-envelope"></i><span><a href="mailto:contact@kilkaari.org.in">contact@kilkaari.org.in</a></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span data-current-year>2026</span> Kilkaari – Bachpan Ki. All rights reserved.</span>
+      <div class="footer__legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="gallery-modal" data-gallery-modal>
+  <button class="gallery-modal__close" data-modal-close aria-label="Close">&times;</button>
+  <div class="gallery-modal__inner">
+    <div class="photo-frame" data-modal-frame></div>
+    <img class="gallery-modal__img" data-modal-img alt="" style="display:none;">
+    <p class="gallery-modal__caption" data-modal-caption></p>
+  </div>
+</div>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/navbar.js"></script>
+<script src="assets/js/gallery.js"></script>
+<script src="assets/js/animation.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

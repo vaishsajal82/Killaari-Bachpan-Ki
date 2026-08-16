@@ -1,0 +1,86 @@
+/* ==========================================================================
+   carousel.css — generic crossfade + swipe image carousel
+   Used by: .hero__slides (hero background) and .about__carousel (Our Story)
+   ========================================================================== */
+
+.imgcarousel{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  touch-action: pan-y; /* let vertical page scroll pass through, we handle horizontal swipe */
+}
+
+.imgcarousel__slide{
+  position:absolute;
+  inset:0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity:0;
+  transition: opacity .9s ease;
+}
+.imgcarousel__slide.is-active{ opacity:1; }
+
+/* dot indicators */
+.imgcarousel__dots{
+  position:absolute;
+  left:50%;
+  bottom:14px;
+  transform: translateX(-50%);
+  z-index:3;
+  display:flex;
+  gap:8px;
+}
+.imgcarousel__dots button{
+  width:8px; height:8px;
+  border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.85);
+  background: rgba(255,255,255,.25);
+  padding:0;
+  cursor:pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+.imgcarousel__dots button.is-active{
+  background: rgba(255,255,255,.95);
+  transform: scale(1.15);
+}
+
+/* Variant for carousels sitting on light backgrounds (e.g. inside a
+   photo-frame card) where white dots would disappear */
+.imgcarousel--on-light .imgcarousel__dots button{
+  border-color: rgba(35,35,35,.55);
+  background: rgba(35,35,35,.18);
+}
+.imgcarousel--on-light .imgcarousel__dots button.is-active{
+  background: rgba(35,35,35,.85);
+}
+
+/* Prev/next arrows, hidden until hover on desktop, always visible on touch */
+.imgcarousel__arrow{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  z-index:3;
+  width:36px; height:36px;
+  border-radius:50%;
+  border:0;
+  background: rgba(0,0,0,.35);
+  color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  opacity:0;
+  transition: opacity .2s ease, background .2s ease;
+}
+.imgcarousel:hover .imgcarousel__arrow{ opacity:1; }
+.imgcarousel__arrow:hover{ background: rgba(0,0,0,.55); }
+.imgcarousel__arrow--prev{ left:12px; }
+.imgcarousel__arrow--next{ right:12px; }
+
+@media (hover: none){
+  .imgcarousel__arrow{ opacity:1; background: rgba(0,0,0,.3); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .imgcarousel__slide{ transition:none; }
+}

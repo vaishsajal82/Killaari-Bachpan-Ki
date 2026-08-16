@@ -1,0 +1,72 @@
+/* ==========================================================================
+   forms.css
+   ========================================================================== */
+
+.form-group{ margin-bottom: 1.3rem; }
+
+.form-label{
+  display:block;
+  font-family: var(--font-display);
+  font-weight:600;
+  font-size:.86rem;
+  color: var(--color-dark);
+  margin-bottom:.45rem;
+}
+
+.form-control{
+  width:100%;
+  padding: .85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-hairline);
+  background: var(--color-light);
+  font-family: var(--font-body);
+  font-size:.95rem;
+  color: var(--color-ink);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.form-control:focus{
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-tint);
+  outline:none;
+}
+textarea.form-control{ resize: vertical; min-height: 130px; }
+
+.form-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.form-card{
+  background: var(--color-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.radio-cards{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:.75rem;
+}
+.radio-card{
+  border:1px solid var(--color-hairline);
+  border-radius: var(--radius-sm);
+  padding: .8rem;
+  text-align:center;
+  cursor:pointer;
+  font-family: var(--font-display);
+  font-weight:600;
+  font-size:.92rem;
+  transition: border-color .2s ease, background .2s ease;
+}
+.radio-card input{ display:none; }
+.radio-card.is-selected,
+.radio-card:hover{ border-color: var(--color-primary); background: var(--color-primary-tint); }
+
+.form-note{ font-size:.8rem; color: var(--color-ink-soft); margin-top:.4rem; }
+
+@media (max-width: 640px){
+  .form-row{ grid-template-columns: 1fr; }
+  .radio-cards{ grid-template-columns: repeat(2, 1fr); }
+}

@@ -1,0 +1,137 @@
+/* ==========================================================================
+   navbar.css
+   ========================================================================== */
+
+.site-header{
+  position: sticky;
+  top:0;
+  z-index: 1000;
+  background: rgba(250,250,250,0.92);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--color-hairline);
+  transition: box-shadow .3s ease;
+}
+.site-header.is-scrolled{
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.navbar__brand{
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  font-family: var(--font-display);
+  font-weight:700;
+  font-size:1.2rem;
+  color: var(--color-dark);
+}
+.navbar__brand-logo{
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.navbar__brand .brand-text{ display:flex; flex-direction:column; line-height:1.05; }
+.navbar__brand .brand-text small{
+  font-family: var(--font-body);
+  font-weight:600;
+  font-size:.62rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color: var(--color-ink-soft);
+}
+
+.navbar__links{
+  display:flex;
+  align-items:center;
+  gap: 2.1rem;
+}
+.navbar__links a{
+  font-family: var(--font-display);
+  font-size:.92rem;
+  font-weight:500;
+  color: var(--color-dark);
+  position:relative;
+  padding: 8px 14px;
+  border-radius: 100px;
+  transition: color .2s ease, background .2s ease, transform .15s ease;
+}
+.navbar__links a::after{
+  content:"";
+  position:absolute;
+  left:14px; right:14px; bottom:2px;
+  height:2px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+.navbar__links a:hover,
+.navbar__links a:focus-visible{
+  color: var(--color-primary);
+  background: var(--color-primary-tint);
+}
+.navbar__links a:hover::after,
+.navbar__links a:focus-visible::after,
+.navbar__links a.active::after{ transform: scaleX(1); }
+.navbar__links a.active{ color: var(--color-primary); background: var(--color-primary-tint); }
+.navbar__links a:active{ transform: scale(.96); }
+
+/* Touch devices: tapping a link gives the same highlighted feedback as
+   hover, briefly, so buttons feel responsive on mobile too. */
+@media (hover: none){
+  .navbar__links a:active{
+    color: var(--color-primary);
+    background: var(--color-primary-tint);
+  }
+}
+
+.navbar__actions{ display:flex; align-items:center; gap:1.2rem; }
+
+.navbar__toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:0;
+  cursor:pointer;
+  padding: 6px;
+}
+.navbar__toggle span{
+  width:24px; height:2px;
+  background: var(--color-dark);
+  transition: transform .3s ease, opacity .3s ease;
+}
+.navbar__toggle.is-open span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.navbar__toggle.is-open span:nth-child(2){ opacity:0; }
+.navbar__toggle.is-open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 960px){
+  .navbar__links{
+    position:fixed;
+    top:70px; left:0; right:0;
+    background: var(--color-light);
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+    border-bottom:1px solid var(--color-hairline);
+    box-shadow: var(--shadow-md);
+    max-height:0;
+    overflow:hidden;
+    transition: max-height .35s ease;
+  }
+  .navbar__links.is-open{ max-height: 420px; }
+  .navbar__links a{
+    width:100%;
+    padding: 16px var(--gutter);
+    border-bottom:1px solid var(--color-hairline);
+  }
+  .navbar__links a::after{ display:none; }
+  .navbar__actions .btn{ display:none; }
+  .navbar__toggle{ display:flex; }
+}

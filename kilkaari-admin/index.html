@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Portal | Kilkaari – Bachpan Ki</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+<!-- Shown by admin.js when the backend API can't be reached at all
+     (server not deployed/asleep/down) — makes network failures obvious
+     instead of surfacing as a cryptic "Failed to fetch" deep in a form. -->
+<div id="connection-banner" class="connection-banner" hidden>
+  <i class="fa-solid fa-triangle-exclamation"></i>
+  <span id="connection-banner-text">Can't reach the backend server.</span>
+  <button id="connection-banner-retry" type="button">Retry</button>
+</div>
+
+<!-- ============================= LOGIN ============================= -->
+<div class="login-screen">
+  <div class="login-card">
+    <div class="brand"><img src="assets/images/logo.png" alt="Kilkaari" class="navbar__brand-logo"></div>
+    <h1>Welcome back</h1>
+    <p>Sign in with your admin account to manage the site.</p>
+    <form id="login-form">
+      <div class="form-group">
+        <label class="form-label" for="login-email">Email</label>
+        <input class="form-control" type="email" id="login-email" required autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="login-password">Password</label>
+        <input class="form-control" type="password" id="login-password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+      <p id="login-error"></p>
+    </form>
+  </div>
+</div>
+
+<!-- ============================= APP SHELL ============================= -->
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><img src="assets/images/logo.png" alt="Kilkaari" class="navbar__brand-logo"></div>
+
+    <button class="nav-item active" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</button>
+
+    <div class="sidebar-section">Inbox</div>
+    <button class="nav-item" data-page="donations"><i class="fa-solid fa-hand-holding-heart"></i> Donations</button>
+    <button class="nav-item" data-page="volunteers"><i class="fa-solid fa-people-group"></i> Volunteers <span class="badge" id="nav-volunteers-badge" style="display:none;"></span></button>
+    <button class="nav-item" data-page="messages"><i class="fa-solid fa-envelope"></i> Messages <span class="badge" id="nav-messages-badge" style="display:none;"></span></button>
+    <button class="nav-item" data-page="users"><i class="fa-solid fa-user-shield"></i> Users</button>
+
+    <div class="sidebar-section">Site Content</div>
+    <button class="nav-item" data-page="programs"><i class="fa-solid fa-graduation-cap"></i> Programs</button>
+    <button class="nav-item" data-page="events"><i class="fa-solid fa-calendar-days"></i> Events</button>
+    <button class="nav-item" data-page="campaigns"><i class="fa-solid fa-bullhorn"></i> Campaigns</button>
+    <button class="nav-item" data-page="gallery"><i class="fa-solid fa-images"></i> Gallery</button>
+    <button class="nav-item" data-page="testimonials"><i class="fa-solid fa-quote-left"></i> Testimonials</button>
+    <button class="nav-item" data-page="centers"><i class="fa-solid fa-location-dot"></i> Centers</button>
+    <button class="nav-item" data-page="student-stories"><i class="fa-solid fa-star"></i> Student Stories</button>
+
+    <div class="sidebar-footer">
+      <div class="who"><i class="fa-solid fa-circle-user"></i> <span id="current-user"></span></div>
+      <button class="btn btn-outline btn-block btn-sm" id="logout-btn">Log Out</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i> Menu</button>
+
+    <!-- ---- Dashboard ---- -->
+    <section class="page is-active" id="page-dashboard">
+      <div class="page-header"><div><h2>Dashboard</h2><p>A quick overview of everything happening on the site.</p></div></div>
+      <div class="stat-grid" id="stat-grid"></div>
+    </section>
+
+    <!-- ---- Donations ---- -->
+    <section class="page" id="page-donations">
+      <div class="page-header"><div><h2>Donations</h2><p>All donation records, newest first.</p></div></div>
+      <div class="table-card">
+        <table id="donations-table">
+          <thead><tr><th>Donor</th><th>Amount</th><th>Type</th><th>Status</th><th>Provider</th><th>Date</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---- Volunteers ---- -->
+    <section class="page" id="page-volunteers">
+      <div class="page-header"><div><h2>Volunteer Applications</h2><p>Review applications and update their status.</p></div></div>
+      <div class="table-card">
+        <table id="volunteers-table">
+          <thead><tr><th>Applicant</th><th>City</th><th>Interest</th><th>Availability</th><th>Status</th><th>Applied</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---- Messages ---- -->
+    <section class="page" id="page-messages">
+      <div class="page-header"><div><h2>Contact Messages</h2><p>Messages submitted through the site's contact form.</p></div></div>
+      <div class="table-card">
+        <table id="messages-table">
+          <thead><tr><th>From</th><th>Message</th><th>Status</th><th>Received</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---- Users ---- -->
+    <section class="page" id="page-users">
+      <div class="page-header"><div><h2>Users</h2><p>Everyone who has registered an account on the site.</p></div></div>
+      <div class="table-card">
+        <table id="users-table">
+          <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---- Content: Programs ---- -->
+    <section class="page" id="page-programs">
+      <div class="page-header"><div><h2>Programs</h2><p>The six program cards shown across the public site.</p></div><button class="btn btn-primary" data-add-content="programs"><i class="fa-solid fa-plus"></i> Add Program</button></div>
+      <div class="table-card">
+        <table id="content-programs-table">
+          <thead><tr><th>Title</th><th>Summary</th><th>Order</th><th>Published</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---- Content: Events ---- -->
+    <section class="page" id="page-events">
+      <div class="page-header"><div><h2>Events</h2><p>Upcoming and past events shown on the Events page.</p></div><button class="btn btn-primary" data-add-content="events"><i class="fa-solid fa-plus"></i> Add Event</button></div>
+      <div class="table-card">
+        <table id="content-events-table">
+          <thead><tr><th>Title</th><th>Location</th><th>Date</th><th>Published</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---- Content: Campaigns ---- -->
+    <section class="page" id="page-campaigns">
+      <div class="page-header"><div><h2>Campaigns</h2><p>Fundraising campaigns shown on the homepage.</p></div><button class="btn btn-primary" data-add-content="campaigns"><i class="fa-solid fa-plus"></i> Add Campaign</button></div>
+      <div class="table-card">
+        <table id="content-campaigns-table">
+          <thead><tr><th>Title</th><th>Goal</th><th>Raised</th><th>Active</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---- Content: Gallery ---- -->
+    <section class="page" id="page-gallery">
+      <div class="page-header"><div><h2>Gallery</h2><p>Photo grid shown on the Gallery page.</p></div><button class="btn btn-primary" data-add-content="gallery"><i class="fa-solid fa-plus"></i> Add Item</button></div>
+      <div class="table-card">
+        <table id="content-gallery-table">
+          <thead><tr><th>Title</th><th>Category</th><th>Order</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---- Content: Testimonials ---- -->
+    <section class="page" id="page-testimonials">
+      <div class="page-header"><div><h2>Testimonials</h2><p>Quotes shown in the testimonials slider.</p></div><button class="btn btn-primary" data-add-content="testimonials"><i class="fa-solid fa-plus"></i> Add Testimonial</button></div>
+      <div class="table-card">
+        <table id="content-testimonials-table">
+          <thead><tr><th>Name</th><th>Role</th><th>Quote</th><th>Published</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---- Content: Centers ---- -->
+    <section class="page" id="page-centers">
+      <div class="page-header"><div><h2>Centers</h2><p>Learning centers shown on the About and Contact pages.</p></div><button class="btn btn-primary" data-add-content="centers"><i class="fa-solid fa-plus"></i> Add Center</button></div>
+      <div class="table-card">
+        <table id="content-centers-table">
+          <thead><tr><th>Name</th><th>Address</th><th>Active</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---- Content: Student Stories ---- -->
+    <section class="page" id="page-student-stories">
+      <div class="page-header"><div><h2>Student Stories</h2><p>The "Our Stars" spotlight cards on the homepage.</p></div><button class="btn btn-primary" data-add-content="student-stories"><i class="fa-solid fa-plus"></i> Add Story</button></div>
+      <div class="table-card">
+        <table id="content-student-stories-table">
+          <thead><tr><th>Name</th><th>Story URL</th><th>Published</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ============================= MODAL ============================= -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal" id="modal"></div>
+</div>
+
+<div id="toast"></div>
+
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

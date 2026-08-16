@@ -1,0 +1,221 @@
+/* ==========================================================================
+   Kilkaari — Bachpan Ki
+   global.css — design tokens, resets, base typography, utilities
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+:root{
+  /* ---- Brand colors (as specified) ---- */
+  --color-primary: #0D6EFD;
+  --color-secondary: #2E8B57;
+  --color-accent: #F4B400;
+  --color-bg: #FAFAFA;
+  --color-dark: #2C2C2C;
+  --color-light: #FFFFFF;
+
+  /* ---- Derived / supporting neutrals (editorial paper tones) ---- */
+  --color-primary-dark: #0952c6;
+  --color-primary-tint: #e8f0fe;
+  --color-secondary-dark: #24714a;
+  --color-secondary-tint: #e7f3ec;
+  --color-accent-tint: #fdf1d3;
+  --color-ink: #232323;
+  --color-ink-soft: #5b5b5b;
+  --color-hairline: #e3e0d8;
+  --color-paper: #F7F5F0;
+
+  /* ---- Type ---- */
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+
+  /* ---- Radius / shadow ---- */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 3px rgba(44,44,44,0.06), 0 1px 2px rgba(44,44,44,0.08);
+  --shadow-md: 0 8px 24px rgba(44,44,44,0.08);
+  --shadow-lg: 0 20px 48px rgba(44,44,44,0.12);
+
+  /* ---- Layout ---- */
+  --container-max: 1200px;
+  --gutter: clamp(20px, 5vw, 64px);
+  --section-pad: clamp(64px, 9vw, 120px);
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{
+  scroll-behavior: smooth;
+  /* Pattern lives on the root element with a fixed attachment. The root's
+     background always paints behind literally everything in the document —
+     no z-index or stacking-context tricks needed, so no section, card, or
+     future style change can ever accidentally cover it or create a visible
+     seam between sections again. */
+  background-color: var(--color-bg);
+  background-image: url('../images/bg-pattern.svg');
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: 420px 420px;
+}
+
+body{
+  margin:0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: transparent;
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img{ max-width:100%; display:block; }
+
+a{ color: inherit; text-decoration:none; }
+
+ul, ol{ margin:0; padding:0; list-style:none; }
+
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--font-display);
+  color: var(--color-dark);
+  line-height: 1.15;
+  margin: 0 0 .5em;
+  letter-spacing: -0.01em;
+}
+
+h1{ font-weight:800; }
+h2{ font-weight:700; }
+h3{ font-weight:600; }
+
+p{ margin: 0 0 1em; color: var(--color-ink-soft); }
+
+.container{
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+section{ padding: var(--section-pad) 0; }
+
+/* ---- Eyebrow / section labels (editorial ledger style) ---- */
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  font-family: var(--font-display);
+  font-size: .78rem;
+  font-weight:600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+.eyebrow::before{
+  content:"";
+  width: 28px;
+  height: 2px;
+  background: var(--color-accent);
+  display:inline-block;
+}
+
+.section-head{
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+.section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+
+.section-head h2{ font-size: clamp(1.8rem, 3.2vw, 2.6rem); }
+.section-head p{ font-size:1.05rem; }
+
+/* ---- Photography placeholder (used across the site instead of real imagery) ---- */
+.photo-frame{
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: flex-end;
+  min-height: 420px;
+}
+.photo-frame img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  z-index:0;
+}
+.photo-frame::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    repeating-linear-gradient(115deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 14px);
+  mix-blend-mode: overlay;
+}
+.photo-frame .photo-caption{
+  position:relative;
+  z-index:1;
+  width:100%;
+  padding: .9rem 1.1rem;
+  background: linear-gradient(to top, rgba(0,0,0,.55), transparent);
+  color:#fff;
+  font-family: var(--font-body);
+  font-size:.78rem;
+  letter-spacing:.02em;
+}
+.photo-frame .photo-tag{
+  position:absolute;
+  top:.85rem; left:.85rem;
+  z-index:1;
+  background: rgba(255,255,255,.9);
+  color: var(--color-dark);
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  padding:.3rem .6rem;
+  border-radius: 100px;
+}
+.photo-frame.tone-blue{ background: linear-gradient(155deg,#dbe6fb 0%, #b9cff5 55%, #9dbdf0 100%); }
+.photo-frame.tone-gold{ background: linear-gradient(155deg,#f6e8c4 0%, #f0d791 55%, #e8c565 100%); }
+.photo-frame.tone-dark{ background: linear-gradient(155deg,#4a4a4a 0%, #333 60%, #232323 100%); }
+
+/* ---- Real photo support: used when an item has an actual image_url from the API ---- */
+.photo-frame.has-photo{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.photo-frame.has-photo::before{ display:none; } /* skip the placeholder texture overlay on real photos */
+
+/* ---- Utilities ---- */
+.text-center{ text-align:center; }
+.visually-hidden{
+  position:absolute !important;
+  width:1px; height:1px;
+  padding:0; margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap; border:0;
+}
+
+.reveal{
+  opacity:0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  .reveal{ opacity:1; transform:none; transition:none; }
+}
+
+::selection{ background: var(--color-accent-tint); color: var(--color-dark); }
+
+:focus-visible{
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}

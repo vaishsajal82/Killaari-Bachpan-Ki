@@ -1,0 +1,27 @@
+fastapi==0.141.1
+uvicorn[standard]==0.30.6
+sqlalchemy==2.0.35
+psycopg[binary]==3.2.3
+pydantic==2.9.2
+pydantic-settings==2.5.2
+python-jose[cryptography]==3.4.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+python-multipart==0.0.31
+python-dotenv==1.2.2
+alembic==1.13.2
+email-validator==2.2.0
+slowapi==0.1.9
+cloudinary==1.45.0
+
+# --- Known-CVE status (see scripts/security-audit.sh / CI) -----------------
+# pyasn1 0.4.8 and ecdsa 0.19.2 are transitive dependencies of
+# python-jose[cryptography] and both carry known CVEs with no compatible
+# fix version available (python-jose 3.4.0 requires pyasn1<0.5.0; forcing
+# pyasn1>=0.6.3 makes `pip install -r requirements.txt` fail outright with
+# a dependency conflict — verified). Neither is actually exploitable here:
+# this app only uses HS256 (symmetric HMAC, set via JWT_ALGORITHM), and
+# both packages' vulnerable code paths only exist to support RSA/EC
+# (RS256/ES256) keys, which this app never uses. Re-evaluate this if the
+# JWT algorithm is ever changed, or if python-jose ships a release with a
+# wider pyasn1 bound.

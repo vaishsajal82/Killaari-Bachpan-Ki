@@ -1,0 +1,31 @@
+/* ==========================================================================
+   responsive.css — final breakpoint refinements (loaded last)
+   ========================================================================== */
+
+/* Large laptops */
+@media (max-width: 1200px){
+  :root{ --container-max: 100%; }
+}
+
+/* Tablets */
+@media (max-width: 960px){
+  section{ padding: clamp(48px, 8vw, 80px) 0; }
+  .cta-banner{ text-align:center; justify-content:center; }
+  .cta-banner__actions{ justify-content:center; width:100%; }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 720px){
+  .footer__bottom{ justify-content:center; }
+}
+
+/* Phones */
+@media (max-width: 480px){
+  .navbar__brand-logo{ height: 34px; }
+  .hero__actions{ flex-direction:column; align-items:stretch; }
+  .hero__actions .btn{ width:100%; }
+  .impact-grid{ grid-template-columns: 1fr 1fr; }
+  .event-card{ grid-template-columns: 1fr; text-align:center; }
+  .event-card__divider{ display:none; }
+  .event-card__date{ display:flex; align-items:baseline; justify-content:center; gap:.4rem; }
+}

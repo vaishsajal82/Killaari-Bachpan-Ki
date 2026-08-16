@@ -1,0 +1,68 @@
+# ---------------------------------------------------------------------------
+# Secrets / environment files
+# ---------------------------------------------------------------------------
+# Real .env files contain actual credentials (database password, JWT
+# secret, admin password) and must NEVER be committed. .env.example is the
+# safe, placeholder-only template and is intentionally NOT ignored below.
+.env
+.env.local
+.env.*.local
+*/.env
+!*.env.example
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------------------------------------------------------------------------
+# Local databases
+# ---------------------------------------------------------------------------
+# SQLite files from local dev only — production uses Postgres via
+# DATABASE_URL, these are never meant to be committed.
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# ---------------------------------------------------------------------------
+# User-uploaded content
+# ---------------------------------------------------------------------------
+# Images admins upload through the admin portal land here at runtime — this
+# is generated/user content, not source code, and shouldn't be committed.
+# The folder structure itself is preserved via .gitkeep, which IS tracked.
+kilkaari-backend/app/static/uploads/*
+!kilkaari-backend/app/static/uploads/.gitkeep
+
+# ---------------------------------------------------------------------------
+# Tooling / CI artifacts
+# ---------------------------------------------------------------------------
+# The throwaway venv scripts/security-audit.sh creates and deletes itself,
+# but ignoring it too means a run that's interrupted mid-way (Ctrl+C, CI
+# cancellation) never leaves it sitting around to be committed by accident.
+.security-audit-venv/
+
+# ---------------------------------------------------------------------------
+# OS / editor files
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---------------------------------------------------------------------------
+# Logs
+# ---------------------------------------------------------------------------
+*.log

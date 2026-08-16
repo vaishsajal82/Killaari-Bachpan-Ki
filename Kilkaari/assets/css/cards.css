@@ -1,0 +1,379 @@
+/* ==========================================================================
+   cards.css
+   ========================================================================== */
+
+/* ---- generic card shell ---- */
+.card{
+  background: var(--color-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.card:hover{ transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+/* ---- About section ---- */
+.about-section{ }
+.about__grid{
+  display:grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(32px,5vw,64px);
+  align-items:start;
+}
+.about__media{ position:sticky; top: 100px; }
+.about__media .photo-frame{ min-height: 380px; aspect-ratio: 4/3.4; box-shadow: var(--shadow-lg); }
+.about__values{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.value-chip{
+  border:1px solid var(--color-hairline);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.1rem;
+  background: var(--color-light);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.value-chip:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+.value-chip .icon{
+  width:42px; height:42px;
+  border-radius:11px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.15rem;
+  margin-bottom:.7rem;
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+/* alternate accent colors across the three chips so the section reads as
+   deliberately colorful rather than a single flat tone repeated three times */
+.value-chip:nth-child(2) .icon{ background: var(--color-secondary-tint); color: var(--color-secondary); }
+.value-chip:nth-child(3) .icon{ background: var(--color-accent-tint); color: #b3820a; }
+.value-chip h4{ font-size:.95rem; margin-bottom:.25rem; }
+.value-chip p{ font-size:.82rem; margin:0; }
+
+/* ---- Program cards ---- */
+.programs-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.program-card{ overflow:hidden; }
+.program-card .photo-frame{ border-radius: var(--radius) var(--radius) 0 0; min-height:190px; }
+.program-card__body{ padding: 1.5rem; }
+.program-card__body .num{
+  font-family: var(--font-display);
+  font-size:.75rem;
+  font-weight:700;
+  color: var(--color-primary);
+  letter-spacing:.08em;
+}
+.program-card__body h3{ font-size:1.15rem; margin: .4rem 0 .55rem; }
+.program-card__body p{ font-size:.92rem; margin-bottom:1rem; }
+
+/* Numbered badge variant — used where a program card has no photo (e.g. the
+   About page's "Our Purpose" grid) so the number reads as a deliberate
+   design element instead of plain small text. */
+.program-card__body .num.badge-num{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:38px; height:38px;
+  border-radius:50%;
+  font-size:.85rem;
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+  letter-spacing:0;
+  margin-bottom:.85rem;
+}
+.programs-grid .program-card:nth-child(4n+2) .num.badge-num{ background: var(--color-secondary-tint); color: var(--color-secondary); }
+.programs-grid .program-card:nth-child(4n+3) .num.badge-num{ background: var(--color-accent-tint); color: #b3820a; }
+.programs-grid .program-card:nth-child(4n+4) .num.badge-num{ background: #fde3e3; color: #c0392b; }
+
+/* Center status pill — used on the About page's "Where We Work" grid */
+.status-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.03em;
+  padding:.3rem .7rem;
+  border-radius:100px;
+}
+.status-pill::before{ content:""; width:7px; height:7px; border-radius:50%; background:currentColor; }
+.status-pill.is-active{ background: var(--color-secondary-tint); color: var(--color-secondary); }
+.status-pill.is-inactive{ background: var(--color-hairline); color: var(--color-ink-soft); }
+.program-card__link{
+  font-family: var(--font-display);
+  font-weight:600;
+  font-size:.85rem;
+  color: var(--color-dark);
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+}
+.program-card__link i{ transition: transform .2s ease; }
+.program-card:hover .program-card__link i{ transform: translateX(4px); }
+
+/* ---- Impact counters ---- */
+.impact-section{
+  background: var(--color-dark);
+  color: #fff;
+}
+.impact-section .section-head h2,
+.impact-section .section-head p{ color: #fff; }
+.impact-section .section-head p{ color: rgba(255,255,255,.72); }
+.impact-grid{
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  text-align:center;
+}
+.impact-stat .num{
+  font-family: var(--font-display);
+  font-weight:800;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--color-accent);
+  display:block;
+}
+.impact-stat .label{
+  font-size:.85rem;
+  color: rgba(255,255,255,.75);
+  margin-top:.35rem;
+}
+
+/* ---- Campaign cards ---- */
+.campaigns-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+.campaign-card{ overflow:hidden; }
+.campaign-card .photo-frame{ border-radius: var(--radius) var(--radius) 0 0; min-height:180px; }
+.campaign-card__body{ padding:1.4rem 1.5rem 1.6rem; }
+.campaign-card__body h3{ font-size:1.1rem; margin-bottom:.7rem; }
+.progress{
+  height:8px;
+  border-radius: 100px;
+  background: var(--color-hairline);
+  overflow:hidden;
+  margin-bottom:.6rem;
+}
+.progress__bar{
+  height:100%;
+  background: var(--color-secondary);
+  border-radius: 100px;
+}
+.campaign-meta{
+  display:flex;
+  justify-content:space-between;
+  font-size:.82rem;
+  color: var(--color-ink-soft);
+  margin-bottom:1.2rem;
+}
+.campaign-meta strong{ color: var(--color-dark); font-family: var(--font-display); }
+
+/* ---- Events ---- */
+.events-list{ display:flex; flex-direction:column; gap:1.25rem; }
+.event-card{
+  display:grid;
+  grid-template-columns: 110px 1px 1fr auto;
+  align-items:center;
+  gap: 1.5rem;
+  padding: 1.3rem 1.6rem;
+}
+.event-card__date{ text-align:center; }
+.event-card__date .day{ font-family: var(--font-display); font-size:1.6rem; font-weight:800; color: var(--color-primary); display:block; }
+.event-card__date .mon{ font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color: var(--color-ink-soft); }
+.event-card__date .icon-badge{
+  width:44px; height:44px;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  margin: 0 auto;
+  background: var(--color-primary-tint);
+}
+.event-card__date .icon-badge i{ color: var(--color-primary); font-size:1.15rem; }
+.events-list .event-card:nth-child(2) .icon-badge{ background: var(--color-secondary-tint); }
+.events-list .event-card:nth-child(2) .icon-badge i{ color: var(--color-secondary); }
+.events-list .event-card:nth-child(3) .icon-badge{ background: var(--color-accent-tint); }
+.events-list .event-card:nth-child(3) .icon-badge i{ color: #b3820a; }
+.events-list .event-card:nth-child(4) .icon-badge{ background: #fde3e3; }
+.events-list .event-card:nth-child(4) .icon-badge i{ color: #c0392b; }
+.event-card__divider{ width:1px; height:52px; background: var(--color-hairline); }
+.event-card__info h3{ font-size:1.05rem; margin-bottom:.3rem; display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; }
+.event-card__info .meta{ font-size:.85rem; color: var(--color-ink-soft); display:flex; gap:1rem; }
+.event-card__info .meta span{ display:flex; align-items:center; gap:.35rem; }
+
+.event-card.is-inactive{ opacity:.75; }
+.event-status-badge{
+  display:inline-block;
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  padding:.2rem .55rem;
+  border-radius:100px;
+}
+.event-status-badge.is-postponed{ background:#fde3e3; color:#c0392b; }
+.event-status-badge.is-completed{ background: var(--color-secondary-tint); color: var(--color-secondary); }
+
+.events-empty{ color: var(--color-ink-soft); font-size:.95rem; }
+
+/* ---- Volunteer ---- */
+.volunteer-section{ }
+.volunteer__benefits{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:1.5rem;
+  margin-bottom: 3rem;
+}
+.benefit-card{ padding: 1.6rem; text-align:left; }
+.benefit-card .icon{
+  width:46px; height:46px;
+  border-radius:10px;
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem;
+  margin-bottom:1rem;
+}
+.benefit-card h4{ font-size:1.02rem; margin-bottom:.4rem; }
+.benefit-card p{ font-size:.9rem; margin:0; }
+
+/* ---- Testimonials ---- */
+.testimonial-track{ display:flex; gap:1.5rem; overflow:hidden; }
+.testimonial-card{
+  min-width: 100%;
+  padding: 2rem;
+  border-left: 3px solid var(--color-accent);
+}
+.testimonial-card p{
+  font-family: var(--font-display);
+  font-size:1.15rem;
+  color: var(--color-dark);
+  font-weight:500;
+  line-height:1.5;
+}
+.testimonial-card .who{ display:flex; align-items:center; gap:.85rem; margin-top:1.2rem; }
+.testimonial-card .avatar{
+  width:44px; height:44px; border-radius:50%;
+  background: var(--color-secondary-tint);
+  color: var(--color-secondary);
+  display:flex; align-items:center; justify-content:center;
+  font-family: var(--font-display); font-weight:700;
+}
+.testimonial-card .who strong{ display:block; font-size:.92rem; }
+.testimonial-card .who span{ font-size:.78rem; color: var(--color-ink-soft); }
+.testimonial-dots{ display:flex; gap:.5rem; justify-content:center; margin-top:1.5rem; }
+.testimonial-dots button{
+  width:8px; height:8px; border-radius:50%;
+  border:0; background: var(--color-hairline); cursor:pointer;
+}
+.testimonial-dots button.active{ background: var(--color-secondary); width:22px; border-radius:4px; transition: width .25s ease; }
+
+/* ---- FAQ ---- */
+.faq-list{ max-width: 780px; margin:0 auto; }
+.faq-item{ border-bottom: 1px solid var(--color-hairline); }
+.faq-item__q{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 1.3rem 0;
+  cursor:pointer;
+  font-family: var(--font-display);
+  font-weight:600;
+  font-size:1rem;
+  color: var(--color-dark);
+  background:none;
+  border:0;
+  width:100%;
+  text-align:left;
+}
+.faq-item__q i{ transition: transform .25s ease; color: var(--color-primary); }
+.faq-item.is-open .faq-item__q i{ transform: rotate(45deg); }
+.faq-item__a{
+  max-height:0;
+  overflow:hidden;
+  transition: max-height .3s ease;
+}
+.faq-item__a p{ padding-bottom: 1.3rem; margin:0; font-size:.95rem; }
+
+/* ---- CTA banner ---- */
+.cta-banner{
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary-dark) 100%);
+  border-radius: var(--radius);
+  padding: clamp(2.5rem, 5vw, 4rem);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:2rem;
+  flex-wrap:wrap;
+  color:#fff;
+}
+.cta-banner h2{ color:#fff; font-size: clamp(1.6rem,2.6vw,2.2rem); margin-bottom:.4rem; }
+.cta-banner p{ color: rgba(255,255,255,.85); margin:0; max-width:46ch; }
+.cta-banner__actions{ display:flex; gap:1rem; flex-wrap:wrap; }
+
+/* ---- Gallery ---- */
+.gallery-filters{ display:flex; gap:.7rem; flex-wrap:wrap; margin-bottom:2rem; }
+.gallery-filters button{
+  border:1px solid var(--color-hairline);
+  background: var(--color-light);
+  padding: .5rem 1.1rem;
+  border-radius:100px;
+  font-family: var(--font-display);
+  font-size:.82rem;
+  font-weight:500;
+  cursor:pointer;
+  transition: all .2s ease;
+}
+.gallery-filters button.active,
+.gallery-filters button:hover{ background: var(--color-dark); color:#fff; border-color: var(--color-dark); }
+
+.gallery-grid{
+  columns: 3 220px;
+  column-gap: 1.25rem;
+}
+.gallery-item{
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
+  border-radius: var(--radius);
+  overflow:hidden;
+  position:relative;
+  cursor:pointer;
+}
+.gallery-item .photo-frame{ min-height: 200px; border-radius: var(--radius); }
+.gallery-item::after{
+  content: "\f00e";
+  font-family:"Font Awesome 6 Free"; font-weight:900;
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:1.3rem;
+  background: rgba(44,44,44,0);
+  opacity:0;
+  transition: all .25s ease;
+}
+.gallery-item:hover::after{ opacity:1; background: rgba(44,44,44,.35); }
+
+@media (max-width: 960px){
+  .about__grid, .hero__grid{ grid-template-columns:1fr; }
+  .about__media{ position:static; }
+  .programs-grid, .campaigns-grid{ grid-template-columns: repeat(2,1fr); }
+  .impact-grid{ grid-template-columns: repeat(2,1fr); row-gap:2rem; }
+  .volunteer__benefits{ grid-template-columns: 1fr; }
+  .about__values{ grid-template-columns: 1fr; }
+  .event-card{ grid-template-columns: 80px 1px 1fr; }
+  .event-card__cta{ grid-column: 1 / -1; }
+  .gallery-grid{ columns: 2 200px; }
+}
+@media (max-width: 640px){
+  .programs-grid, .campaigns-grid{ grid-template-columns: 1fr; }
+  .impact-grid{ grid-template-columns: repeat(2,1fr); }
+  .gallery-grid{ columns: 1; }
+}
